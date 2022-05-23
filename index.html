@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html class="has-background-info" lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,8 +15,24 @@
         <div class="container">
             <!-- webpage title -->
             <h1 class="title is-1 has-text-centered">Covid Rates By Country</h1>
-
             <!-- search form -->
+            <div class="columns">
+                <div class="column is-4">
+                    <form>
+                        <div class="field">
+                            <label class="label has-text-centered is-size-3 m-1">Country Name</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Enter country name">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control is-flex is-justify-content-center">
+                                <button class="button is-link is-light">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
 
             <!-- search history list -->
 
@@ -28,4 +45,5 @@
     </section>
     <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
