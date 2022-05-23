@@ -15,10 +15,11 @@
         <div class="container">
             <!-- webpage title -->
             <h1 class="title is-1 has-text-centered">Covid Rates By Country</h1>
+
             <!-- search form -->
             <div class="columns">
                 <div class="column is-4">
-                    <form>
+                    <form id="input-form">
                         <div class="field">
                             <label class="label has-text-centered is-size-3 m-1">Country Name</label>
                             <div class="control">
@@ -41,8 +42,17 @@
             <!-- country covid information -->
 
             <!-- modals -->
+            <div id="form-modal" class="modal">
+                <div class="modal-background"></div>
+                <div class="modal-content has-text-centered has-text-white">
+                    <div class="box">
+                        <p>Please provide country name.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
+    
     <script src="./assets/js/script.js"></script>
 </body>
 
