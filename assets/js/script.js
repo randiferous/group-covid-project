@@ -25,7 +25,11 @@ var formSubmitHandler = function (event) {
     }
 };
 
-// var saveCountry
+ var saveCountry = function (countryInput) {
+     countryStorage.push(countryInput)
+ localStorage.setItem("countries", JSON.stringify(countryStorage))
+
+ }
 
 // test api server fetch
 var getCovidInfo = function (countryName) {
