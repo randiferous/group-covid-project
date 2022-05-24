@@ -8,7 +8,7 @@ var formModalEl = document.querySelector("#form-modal");
 
 var countryStorage = [];
 
-// test local storage
+// form handler
 var formSubmitHandler = function (event) {
     event.preventDefault();
     var countryInput = inputFieldEl.value.trim();
@@ -25,7 +25,22 @@ var formSubmitHandler = function (event) {
     }
 };
 
-// var saveCountry
+// test local storage
+var saveCountry = function (countryInput) {
+    countryStorage.push(countryInput)
+    localStorage.setItem("countries", JSON.stringify(countryStorage))
+};
+
+var loadCountries = function () {
+    var savedCountries = localStorage.getItem("countries");
+    // if there are no countries, set countries to empty array and return out of function
+    if (!savedCountries) {
+        return false;
+    }
+    // parse into array of objects
+    countryStorage = JSON.parse(savedCountries);
+    console.log(countryStorage);
+}
 
 // test api server fetch
 var getCovidInfo = function (countryName) {
@@ -58,7 +73,7 @@ var displayCovidInfo = function (data) {
 
     var testing = data.tests;
     console.log(testing);
-    
+
     var todayCases = data.todayCases;
     console.log(todayCases);
 
@@ -72,6 +87,8 @@ var displayCovidInfo = function (data) {
     console.log(totalCases);
 };
 
-// getCovidInfo("Denmark");
+// getCovidInfo("France");
 
 inputFormEl.addEventListener("submit", formSubmitHandler);
+
+loadCountries();
