@@ -8,7 +8,7 @@ var formModalEl = document.querySelector("#form-modal");
 
 var countryStorage = [];
 
-// test local storage
+// form handler
 var formSubmitHandler = function (event) {
     event.preventDefault();
     var countryInput = inputFieldEl.value.trim();
@@ -25,10 +25,13 @@ var formSubmitHandler = function (event) {
     }
 };
 
- var saveCountry = function (countryInput) {
-     countryStorage.push(countryInput)
- localStorage.setItem("countries", JSON.stringify(countryStorage))
+// test local storage
+var saveCountry = function (countryInput) {
+    countryStorage.push(countryInput)
+    localStorage.setItem("countries", JSON.stringify(countryStorage))
+};
 
+<<<<<<< HEAD
  }
 <<<<<<< HEAD
 
@@ -49,6 +52,18 @@ var formSubmitHandler = function (event) {
 
 =======
 >>>>>>> 1324f315a2ad2710cab9aa973b1746b32f190620
+=======
+var loadCountries = function () {
+    var savedCountries = localStorage.getItem("countries");
+    // if there are no countries, set countries to empty array and return out of function
+    if (!savedCountries) {
+        return false;
+    }
+    // parse into array of objects
+    countryStorage = JSON.parse(savedCountries);
+    console.log(countryStorage);
+}
+>>>>>>> ca09b5582a6be78d438182c0fbcba30f5fd8fed7
 
 // test api server fetch
 var getCovidInfo = function (countryName) {
@@ -81,7 +96,7 @@ var displayCovidInfo = function (data) {
 
     var testing = data.tests;
     console.log(testing);
-    
+
     var todayCases = data.todayCases;
     console.log(todayCases);
 
@@ -95,8 +110,27 @@ var displayCovidInfo = function (data) {
     console.log(totalCases);
 };
 
-// getCovidInfo("Denmark");
+// testing second api fetch
+var countryInfo = function (countryName){
+    var apiUrl ="https://restcountries.com/v3.1/name/" + countryName;
+    fetch(apiUrl).then(function (response) {
+        if (response.ok) {
+            response.json().then(function (data) {
+                console.log(data);
+            });
+        }
+    });
+};
+
+// make data variables to display in function as follows; Continents, Capitals, Populations, Language, timezones, flag, currency, sub-region
 
 inputFormEl.addEventListener("submit", formSubmitHandler);
 
+<<<<<<< HEAD
+inputFormEl.addEventListener("submit", formSubmitHandler);
+
 loadCountries();
+=======
+loadCountries();
+countryInfo("France");
+>>>>>>> ca09b5582a6be78d438182c0fbcba30f5fd8fed7
