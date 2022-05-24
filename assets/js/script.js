@@ -87,8 +87,21 @@ var displayCovidInfo = function (data) {
     console.log(totalCases);
 };
 
-// getCovidInfo("France");
+// testing second api fetch
+var countryInfo = function (countryName){
+    var apiUrl ="https://restcountries.com/v3.1/name/" + countryName;
+    fetch(apiUrl).then(function (response) {
+        if (response.ok) {
+            response.json().then(function (data) {
+                console.log(data);
+            });
+        }
+    });
+};
+
+// make data variables to display in function as follows; Continents, Capitals, Populations, Language, timezones, flag, currency, sub-region
 
 inputFormEl.addEventListener("submit", formSubmitHandler);
 
 loadCountries();
+countryInfo("France");
