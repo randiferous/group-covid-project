@@ -31,28 +31,6 @@ var saveCountry = function (countryInput) {
     localStorage.setItem("countries", JSON.stringify(countryStorage))
 };
 
-<<<<<<< HEAD
- }
-<<<<<<< HEAD
-
- var loadCountries = function() {
-     var savedCountries = localStorage.getItem("countryStorage");
-     // if there are no countries, set countries to empty array and return out of function
-     if (!savedCountries) {
-         return false;
-     }
-
-     // parse into array of objects
-     countryStorage = JSON.parse(savedCountries);
-
-     console.log(countryStorage);
- }
-
-
-
-=======
->>>>>>> 1324f315a2ad2710cab9aa973b1746b32f190620
-=======
 var loadCountries = function () {
     var savedCountries = localStorage.getItem("countries");
     // if there are no countries, set countries to empty array and return out of function
@@ -63,7 +41,6 @@ var loadCountries = function () {
     countryStorage = JSON.parse(savedCountries);
     console.log(countryStorage);
 }
->>>>>>> ca09b5582a6be78d438182c0fbcba30f5fd8fed7
 
 // test api server fetch
 var getCovidInfo = function (countryName) {
@@ -126,11 +103,5 @@ var countryInfo = function (countryName){
 
 inputFormEl.addEventListener("submit", formSubmitHandler);
 
-<<<<<<< HEAD
-inputFormEl.addEventListener("submit", formSubmitHandler);
-
-loadCountries();
-=======
 loadCountries();
 countryInfo("France");
->>>>>>> ca09b5582a6be78d438182c0fbcba30f5fd8fed7
