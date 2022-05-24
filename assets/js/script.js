@@ -25,7 +25,27 @@ var formSubmitHandler = function (event) {
     }
 };
 
-// var saveCountry
+ var saveCountry = function (countryInput) {
+     countryStorage.push(countryInput)
+ localStorage.setItem("countries", JSON.stringify(countryStorage))
+
+ }
+
+ var loadCountries = function() {
+     var savedCountries = localStorage.getItem("countryStorage");
+     // if there are no countries, set countries to empty array and return out of function
+     if (!savedCountries) {
+         return false;
+     }
+
+     // parse into array of objects
+     countryStorage = JSON.parse(savedCountries);
+
+     console.log(countryStorage);
+ }
+
+
+
 
 // test api server fetch
 var getCovidInfo = function (countryName) {
@@ -75,3 +95,5 @@ var displayCovidInfo = function (data) {
 // getCovidInfo("Denmark");
 
 inputFormEl.addEventListener("submit", formSubmitHandler);
+
+loadCountries();
