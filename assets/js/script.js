@@ -28,6 +28,31 @@ var displayCovidInfo = function (data) {
 
     var activeCases = data.active;
     console.log(activeCases);
+
+    var criticalCondition = data.critical;
+    console.log(criticalCondition);
+
+    var totalDeath = data.deaths;
+    console.log(totalDeath);
+
+    var totalRecovered = data.recovered;
+    console.log(totalRecovered);
+
+    var testing = data.tests;
+    console.log(testing);
+    
+    var todayCases = data.todayCases;
+    console.log(todayCases);
+
+    var todayDeaths = data.todayDeaths;
+    console.log(todayDeaths);
+
+    var todayRecovered = data.todayRecovered;
+    console.log(todayRecovered);
+
+    var totalCases = data.cases;
+    console.log(totalCases);
+
 };
 
 getCovidInfo("Denmark");
