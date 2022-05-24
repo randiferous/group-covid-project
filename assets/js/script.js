@@ -30,6 +30,7 @@ var formSubmitHandler = function (event) {
  localStorage.setItem("countries", JSON.stringify(countryStorage))
 
  }
+<<<<<<< HEAD
 
  var loadCountries = function() {
      var savedCountries = localStorage.getItem("countryStorage");
@@ -46,6 +47,8 @@ var formSubmitHandler = function (event) {
 
 
 
+=======
+>>>>>>> 1324f315a2ad2710cab9aa973b1746b32f190620
 
 // test api server fetch
 var getCovidInfo = function (countryName) {
