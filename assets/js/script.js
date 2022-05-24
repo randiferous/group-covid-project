@@ -3,11 +3,29 @@ console.log("Hello birds!")
 console.log("Goodnight yall!")
 
 var inputFormEl = document.querySelector("#input-form");
+var inputFieldEl = document.querySelector("#input-country");
 var formModalEl = document.querySelector("#form-modal");
 
 var countryStorage = [];
 
 // test local storage
+var formSubmitHandler = function (event) {
+    event.preventDefault();
+    var countryInput = inputFieldEl.value.trim();
+    console.log(countryInput);
+    saveCountry(countryInput);
+
+    if (countryInput) {
+        inputFieldEl.value = "";
+    } else {
+        formModalEl.style.display = "flex";
+        window.onclick = function (event) {
+            formModalEl.style.display = "none";
+        }
+    }
+};
+
+// var saveCountry
 
 // test api server fetch
 var getCovidInfo = function (countryName) {
@@ -52,9 +70,8 @@ var displayCovidInfo = function (data) {
 
     var totalCases = data.cases;
     console.log(totalCases);
-
 };
 
-getCovidInfo("Denmark");
+// getCovidInfo("Denmark");
 
-// inputFormEl.addEventListener("submit", formSubmitHandler);
+inputFormEl.addEventListener("submit", formSubmitHandler);
