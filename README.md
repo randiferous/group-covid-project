@@ -10,3 +10,8 @@
 - settled on our CSS framework, Bulma
 - started using Discord to host group meetings
 - began building HTML skeleton, including header & form
+
+5/23 meeting:
+- tested both API server-side pulls
+- set up the javascript for form submission
+- test local storage getting and setting
