@@ -100,6 +100,31 @@ var countryInfo = function (countryName){
 };
 
 // make data variables to display in function as follows; Continents, Capitals, Populations, Language, timezones, flag, currency, sub-region
+var displayCountryInfo = function (data) {
+    var continent = data.continents;
+    console.log(continent);
+
+    var capital = data.capital;
+    console.log(capital);
+
+    var population = data.population;
+    console.log(population);
+
+    var languages = data.languages;
+    console.log(languages);
+
+    var timezones = data.timezones;
+    console.log(timezones);
+
+    var flag = data.flag;
+    console.log(flag);
+
+    var currency = data.currencies;
+    console.log(currency);
+
+    var subregion = data.subregion;
+    console.log(subregion);
+}
 
 inputFormEl.addEventListener("submit", formSubmitHandler);
 
