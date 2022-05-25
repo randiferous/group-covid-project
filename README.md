@@ -15,3 +15,19 @@
 - tested both API server-side pulls
 - set up the javascript for form submission
 - test local storage getting and setting
+
+USER STORY:
+
+As a inquisitive traveller, I want to know general country 
+information and pertinent COVID-19 data from that country 
+so I can stay informed on the pandemic status of a country 
+I may visit. 
+
+As a user, when I enter a country into the form, I am presented 
+with pertinent country information (population, flag, language, 
+currency). 
+
+As a user, when I enter a country into the form, I am presented 
+with past and current COVID-19 data. 
+
+I want to a list of countries I have added to display on the page. 
