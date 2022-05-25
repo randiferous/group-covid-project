@@ -16,6 +16,13 @@
 - set up the javascript for form submission
 - test local storage getting and setting
 
+5/24 meeting:
+- completed country info API pull
+- error handle using modals
+- finalized user story (grilled by instructor)
+- HTML search history
+- test connection between form and country display
+
 USER STORY:
 
 As a inquisitive traveller, I want to know general country 
