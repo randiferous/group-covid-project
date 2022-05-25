@@ -9,6 +9,8 @@ var formModalEl = document.querySelector("#form-modal");
 var fetchModalEl = document.querySelector("#form-error-fetch");
 var serverModalEl = document.querySelector("#form-error-server");
 
+var countryNameTitleEl = document.querySelector("#country-name-title")
+
 var countryStorage = [];
 
 // form handler
@@ -52,6 +54,8 @@ var confirmCountryName = function (countryInput) {
 var saveCountry = function (countryInput) {
     countryStorage.push(countryInput)
     localStorage.setItem("countries", JSON.stringify(countryStorage))
+
+    getCovidInfo(countryInput);
 };
 
 var loadCountries = function () {
@@ -80,7 +84,7 @@ var getCovidInfo = function (countryName) {
 
 var displayCovidInfo = function (data) {
     var countryName = data.country;
-    console.log(countryName);
+    countryNameTitleEl.textContent = countryName;
 
     var activeCases = data.active;
     console.log(activeCases);
