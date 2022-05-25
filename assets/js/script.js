@@ -94,6 +94,7 @@ var countryInfo = function (countryName){
         if (response.ok) {
             response.json().then(function (data) {
                 console.log(data);
+                displayCountryInfo(data);
             });
         }
     });
@@ -101,28 +102,32 @@ var countryInfo = function (countryName){
 
 // make data variables to display in function as follows; Continents, Capitals, Populations, Language, timezones, flag, currency, sub-region
 var displayCountryInfo = function (data) {
-    var continent = data.continents;
+    var continent = data[0].continents[0];
     console.log(continent);
 
-    var capital = data.capital;
+    var capital = data[0].capital[0];
     console.log(capital);
 
-    var population = data.population;
+    var population = data[0].population;
     console.log(population);
 
-    var languages = data.languages;
-    console.log(languages);
+    var languages = data[0].languages;
+    var languageObject = Object.values(languages);
+    var languageName = languageObject[0];
+    console.log(languageName);
 
-    var timezones = data.timezones;
+    var timezones = data[0].timezones[6];
     console.log(timezones);
 
-    var flag = data.flag;
+    var flag = data[0].flag;
     console.log(flag);
 
-    var currency = data.currencies;
-    console.log(currency);
+    var currency = data[0].currencies;
+    var currencyObject = Object.values(currency);
+    var currencyName = currencyObject[0].name;
+    console.log(currencyName);
 
-    var subregion = data.subregion;
+    var subregion = data[0].subregion;
     console.log(subregion);
 }
 
