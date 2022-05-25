@@ -4,7 +4,10 @@ console.log("Goodnight yall!")
 
 var inputFormEl = document.querySelector("#input-form");
 var inputFieldEl = document.querySelector("#input-country");
+
 var formModalEl = document.querySelector("#form-modal");
+var fetchModalEl = document.querySelector("#form-error-fetch");
+var serverModalEl = document.querySelector("#form-error-server");
 
 var countryStorage = [];
 
@@ -13,7 +16,7 @@ var formSubmitHandler = function (event) {
     event.preventDefault();
     var countryInput = inputFieldEl.value.trim();
     console.log(countryInput);
-    saveCountry(countryInput);
+    confirmCountryName(countryInput);
 
     if (countryInput) {
         inputFieldEl.value = "";
@@ -24,6 +27,26 @@ var formSubmitHandler = function (event) {
         }
     }
 };
+
+var confirmCountryName = function (countryInput) {
+    var apiUrl = "https://disease.sh/v3/covid-19/countries/" + countryInput;
+    fetch(apiUrl).then(function (response) {
+        if (response.ok) {
+            saveCountry(countryInput);
+        } else {
+            fetchModalEl.style.display = "flex";
+            window.onclick = function (event) {
+                fetchModalEl.style.display = "none";
+            }
+        }
+    })
+        .catch(function (error) {
+            serverModalEl.style.display = "flex";
+            window.onclick = function (event) {
+                serverModalEl.style.display = "none";
+            }
+        })
+}
 
 // test local storage
 var saveCountry = function (countryInput) {
@@ -88,12 +111,11 @@ var displayCovidInfo = function (data) {
 };
 
 // testing second api fetch
-var countryInfo = function (countryName){
-    var apiUrl ="https://restcountries.com/v3.1/name/" + countryName;
+var countryInfo = function (countryName) {
+    var apiUrl = "https://restcountries.com/v3.1/name/" + countryName;
     fetch(apiUrl).then(function (response) {
         if (response.ok) {
             response.json().then(function (data) {
-                console.log(data);
                 displayCountryInfo(data);
             });
         }
@@ -134,4 +156,4 @@ var displayCountryInfo = function (data) {
 inputFormEl.addEventListener("submit", formSubmitHandler);
 
 loadCountries();
-countryInfo("France");
+// countryInfo();
