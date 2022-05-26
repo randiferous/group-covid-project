@@ -9,8 +9,10 @@ var formModalEl = document.querySelector("#form-modal");
 var fetchModalEl = document.querySelector("#form-error-fetch");
 var serverModalEl = document.querySelector("#form-error-server");
 
-var countryNameTitleEl = document.querySelector("#country-name-title")
 var countryList = document.querySelector("#country-list")
+
+var countryNameTitleEl = document.querySelector("#country-name-title")
+// create variables for placeholder elements
 var countryStorage = [];
 
 // form handler
@@ -67,18 +69,27 @@ var loadCountries = function () {
     }
     // parse into array of objects
     countryStorage = JSON.parse(savedCountries);
-    console.log(countryStorage);
+
+    for (var i = 0; i < countryStorage.length; i++) {
+        var countryInput = countryStorage[i];
+        searchHistory(countryInput)
+    }
 }
 
-// veiw previously searched countries
+// view previously searched countries
 var searchHistory = function (countryInput) {
     var countryListElement = document.createElement("li")
     var countryAnchor = document.createElement("a")
     countryAnchor.className = "has-text-light"
-    countryAnchor.textContent= countryInput;
+    countryAnchor.textContent = countryInput;
     countryListElement.appendChild(countryAnchor);
     countryList.appendChild(countryListElement);
     
+    countryAnchor.addEventListener("click", eventHandler);
+}
+
+var eventHandler = function (event) {
+    getCovidInfo(event.target.textContent);
 }
 
 // test api server fetch
@@ -97,7 +108,8 @@ var getCovidInfo = function (countryName) {
 var displayCovidInfo = function (data) {
     var countryName = data.country;
     countryNameTitleEl.textContent = countryName;
-
+    
+    // update textContent of elements with data
     var activeCases = data.active;
     console.log(activeCases);
 
