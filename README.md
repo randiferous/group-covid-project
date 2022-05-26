@@ -37,4 +37,4 @@ currency).
 As a user, when I enter a country into the form, I am presented 
 with past and current COVID-19 data. 
 
-I want to a list of countries I have added to display on the page. 
+I want the list of countries I have previously searched to display on the page. 
