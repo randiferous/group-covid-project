@@ -10,7 +10,7 @@ var fetchModalEl = document.querySelector("#form-error-fetch");
 var serverModalEl = document.querySelector("#form-error-server");
 
 var countryNameTitleEl = document.querySelector("#country-name-title")
-
+var countryList = document.querySelector("#country-list")
 var countryStorage = [];
 
 // form handler
@@ -54,6 +54,7 @@ var confirmCountryName = function (countryInput) {
 var saveCountry = function (countryInput) {
     countryStorage.push(countryInput)
     localStorage.setItem("countries", JSON.stringify(countryStorage))
+    searchHistory(countryInput);
 
     getCovidInfo(countryInput);
 };
@@ -67,6 +68,17 @@ var loadCountries = function () {
     // parse into array of objects
     countryStorage = JSON.parse(savedCountries);
     console.log(countryStorage);
+}
+
+// veiw previously searched countries
+var searchHistory = function (countryInput) {
+    var countryListElement = document.createElement("li")
+    var countryAnchor = document.createElement("a")
+    countryAnchor.className = "has-text-light"
+    countryAnchor.textContent= countryInput;
+    countryListElement.appendChild(countryAnchor);
+    countryList.appendChild(countryListElement);
+    
 }
 
 // test api server fetch
