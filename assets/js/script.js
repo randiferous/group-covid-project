@@ -183,5 +183,5 @@ var displayCountryInfo = function (data) {
 
 inputFormEl.addEventListener("submit", formSubmitHandler);
 
-loadCountries();
-// countryInfo();
+// loadCountries();
+countryInfo();
