@@ -14,7 +14,6 @@ var countryList = document.querySelector("#country-list")
 var countryNameTitleEl = document.querySelector("#country-name-title")
 // create variables for placeholder elements
 var displayCovidInfoEl = document.querySelector("#covid-info-display")
-var countryContainerEl = document.querySelector("#country-container")
 var countryStorage = [];
 
 // form handler
@@ -115,7 +114,9 @@ var displayCovidInfo = function (data) {
 
     // update textContent of elements with data
     var activeCases = data.active;
-    //displayActiveCases.textContent = activeCases;
+    var displayActiveCases = document.createElement("li");
+    displayActiveCases.textContent = activeCases;
+    displayCovidInfoEl.appendChild(displayActiveCases);
 
     var criticalCondition = data.critical;
     var displayCriticalCondition = document.createElement("li");
@@ -123,29 +124,42 @@ var displayCovidInfo = function (data) {
     displayCovidInfoEl.appendChild(displayCriticalCondition);
 
 
-
-
-
     var totalDeath = data.deaths;
-    console.log(totalDeath);
+    var displayTotalDeath = document.createElement("li");
+    displayTotalDeath.textContent = totalDeath;
+    displayCovidInfoEl.appendChild(displayTotalDeath);
 
     var totalRecovered = data.recovered;
-    console.log(totalRecovered);
+   var displayTotalRecovered = document.createElement("li");
+   displayTotalRecovered.textContent =totalRecovered
+   displayCovidInfoEl.appendChild(displayTotalRecovered);
+
 
     var testing = data.tests;
-    console.log(testing);
+    var displayTesting = document.createElement("li");
+    displayTesting.textContent = testing
+    displayCovidInfoEl.appendChild(displayTesting);
 
     var todayCases = data.todayCases;
-    console.log(todayCases);
+    var displayTodayCases = document.createElement("li");
+    displayTodayCases.textContent = todayCases
+    displayCovidInfoEl.appendChild(displayTodayCases);
+
 
     var todayDeaths = data.todayDeaths;
-    console.log(todayDeaths);
+    var displayDeaths = document.createElement("li");
+    displayDeaths.textContent = todayDeaths
+    displayCovidInfoEl.appendChild(displayDeaths);
 
     var todayRecovered = data.todayRecovered;
-    console.log(todayRecovered);
+    var displayTodayRecovered = document.createElement("li");
+    displayTodayRecovered.textContent = todayRecovered
+    displayCovidInfoEl.appendChild(displayTodayRecovered);
 
     var totalCases = data.cases;
-    console.log(totalCases);
+    var displayTotalCases = document.createElement("li");
+    displayTotalCases.textContent = totalCases
+    displayCovidInfoEl.appendChild(displayTotalCases);
 };
 
 // testing second api fetch
