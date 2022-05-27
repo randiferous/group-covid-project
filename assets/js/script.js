@@ -13,11 +13,14 @@ var countryList = document.querySelector("#country-list")
 
 var countryNameTitleEl = document.querySelector("#country-name-title")
 // create variables for placeholder elements
+var displayCovidInfoEl = document.querySelector("#covid-info-display")
+var countryContainerEl = document.querySelector("#country-container")
 var countryStorage = [];
 
 // form handler
 var formSubmitHandler = function (event) {
     event.preventDefault();
+    displayCovidInfoEl.innerHTML =""
     var countryInput = inputFieldEl.value.trim();
     console.log(countryInput);
     confirmCountryName(countryInput);
@@ -84,7 +87,7 @@ var searchHistory = function (countryInput) {
     countryAnchor.textContent = countryInput;
     countryListElement.appendChild(countryAnchor);
     countryList.appendChild(countryListElement);
-    
+
     countryAnchor.addEventListener("click", eventHandler);
 }
 
@@ -94,27 +97,33 @@ var eventHandler = function (event) {
 
 // test api server fetch
 var getCovidInfo = function (countryName) {
+
     var apiUrl = "https://disease.sh/v3/covid-19/countries/" + countryName;
     fetch(apiUrl).then(function (response) {
-        if (response.ok) {
-            response.json().then(function (data) {
-                console.log(data);
-                displayCovidInfo(data);
-            });
-        }
+
+        response.json().then(function (data) {
+            console.log(data);
+            displayCovidInfo(data);
+        });
     });
 };
 
 var displayCovidInfo = function (data) {
     var countryName = data.country;
     countryNameTitleEl.textContent = countryName;
-    
+
     // update textContent of elements with data
     var activeCases = data.active;
-    console.log(activeCases);
+    //displayActiveCases.textContent = activeCases;
 
     var criticalCondition = data.critical;
-    console.log(criticalCondition);
+    var displayCriticalCondition = document.createElement("li");
+    displayCriticalCondition.textContent = criticalCondition;
+    displayCovidInfoEl.appendChild(displayCriticalCondition);
+
+
+
+
 
     var totalDeath = data.deaths;
     console.log(totalDeath);
