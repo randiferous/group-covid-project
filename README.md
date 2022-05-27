@@ -23,6 +23,11 @@
 - HTML search history
 - test connection between form and country display
 
+5/26 meeting:
+- tested display of covid information
+- made sure country list buttons display info
+- addressed potential major bug where information stacked over each other
+
 USER STORY:
 
 As a inquisitive traveller, I want to know general country 

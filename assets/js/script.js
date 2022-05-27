@@ -19,7 +19,7 @@ var countryStorage = [];
 // form handler
 var formSubmitHandler = function (event) {
     event.preventDefault();
-    displayCovidInfoEl.innerHTML =""
+    displayCovidInfoEl.innerHTML = ""
     var countryInput = inputFieldEl.value.trim();
     console.log(countryInput);
     confirmCountryName(countryInput);
@@ -92,6 +92,7 @@ var searchHistory = function (countryInput) {
 }
 
 var eventHandler = function (event) {
+    displayCovidInfoEl.innerHTML = ""
     getCovidInfo(event.target.textContent);
 }
 
@@ -130,9 +131,9 @@ var displayCovidInfo = function (data) {
     displayCovidInfoEl.appendChild(displayTotalDeath);
 
     var totalRecovered = data.recovered;
-   var displayTotalRecovered = document.createElement("li");
-   displayTotalRecovered.textContent =totalRecovered
-   displayCovidInfoEl.appendChild(displayTotalRecovered);
+    var displayTotalRecovered = document.createElement("li");
+    displayTotalRecovered.textContent = totalRecovered
+    displayCovidInfoEl.appendChild(displayTotalRecovered);
 
 
     var testing = data.tests;
@@ -209,4 +210,3 @@ var displayCountryInfo = function (data) {
 inputFormEl.addEventListener("submit", formSubmitHandler);
 
 loadCountries();
-// countryInfo();
