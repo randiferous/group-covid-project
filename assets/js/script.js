@@ -14,7 +14,6 @@ var countryList = document.querySelector("#country-list")
 var countryNameTitleEl = document.querySelector("#country-name-title")
 // create variables for placeholder elements
 var displayCovidInfoEl = document.querySelector("#covid-info-display")
-var countryContainerEl = document.querySelector("#country-container")
 var countryStorage = [];
 
 // form handler
@@ -126,10 +125,15 @@ var displayCovidInfo = function (data) {
 
 
     var totalDeath = data.deaths;
-    console.log(totalDeath);
+    var displayTotalDeath = document.createElement("li");
+    displayTotalDeath.textContent = totalDeath;
+    displayCovidInfoEl.appendChild(displayTotalDeath)
 
     var totalRecovered = data.recovered;
-    console.log(totalRecovered);
+   var displayTotalRecovered = document.createElement("li");
+   displayTotalRecovered.textContent =totalRecovered
+   displayCovidInfoEl.appendChild(displayTotalRecovered)
+
 
     var testing = data.tests;
     console.log(testing);
