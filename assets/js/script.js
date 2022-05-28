@@ -180,25 +180,25 @@ var displayCountryInfo = function (data) {
     var continent = data[0].continents[0];
     var displayContinent = document.createElement("li");
     displayContinent.textContent = continent;
-    displayCovidInfoEl.appendChild(displayContinent);;
+    displayCovidInfoEl.appendChild(displayContinent);
 
     var capital = data[0].capital[0];
     var displayCapital =document.createElement("li");
     displayCapital.textContent = capital;
-    displayCovidInfo.appendChild(displayCapital)
+    displayCovidInfoEl.appendChild(displayCapital);
 
     var population = data[0].population;
     var displayPopulation = document.createElement("li");
     displayPopulation.textContent = population;
-    displayCovidInfoEl.appendChild(displayPopulation)
+    displayCovidInfoEl.appendChild(displayPopulation);
 
     var languages = data[0].languages;
     var languageObject = Object.values(languages);
     var languageName = languageObject[0];
-    console.log(languageName);
+    var displayLanguageName = document.createElement("li");
+    displayLanguageName.textContent = languageName;
+    displayCovidInfoEl.appendChild(displayLanguageName);
 
-    var timezones = data[0].timezones[0];
-    console.log(timezones);
 
     var flag = data[0].flag;
     console.log(flag);
@@ -206,10 +206,15 @@ var displayCountryInfo = function (data) {
     var currency = data[0].currencies;
     var currencyObject = Object.values(currency);
     var currencyName = currencyObject[0].name;
-    console.log(currencyName);
+    var displayCurrency = document.createElement("li");
+    displayCurrency.textContent = currencyName;
+    displayCovidInfoEl.appendChild(displayCurrency)
 
     var subregion = data[0].subregion;
-    console.log(subregion);
+    var displaySubregion = document.createElement("li");
+    displaySubregion.textContent = subregion;
+    displayCovidInfoEl.appendChild(displaySubregion);
+    
 }
 
 inputFormEl.addEventListener("submit", formSubmitHandler);
