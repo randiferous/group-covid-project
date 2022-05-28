@@ -116,50 +116,50 @@ var displayCovidInfo = function (data) {
     // update textContent of elements with data
     var activeCases = data.active;
     var displayActiveCases = document.createElement("li");
-    displayActiveCases.textContent = activeCases;
+    displayActiveCases.textContent = "Active Cases: " + activeCases;
     displayCovidInfoEl.appendChild(displayActiveCases);
 
     var criticalCondition = data.critical;
     var displayCriticalCondition = document.createElement("li");
-    displayCriticalCondition.textContent = criticalCondition;
+    displayCriticalCondition.textContent = "Number in Critical Condition: " + criticalCondition;
     displayCovidInfoEl.appendChild(displayCriticalCondition);
 
 
     var totalDeath = data.deaths;
     var displayTotalDeath = document.createElement("li");
-    displayTotalDeath.textContent = totalDeath;
+    displayTotalDeath.textContent = "Total Deaths: " + totalDeath;
     displayCovidInfoEl.appendChild(displayTotalDeath);
 
     var totalRecovered = data.recovered;
     var displayTotalRecovered = document.createElement("li");
-    displayTotalRecovered.textContent = totalRecovered
+    displayTotalRecovered.textContent = "Total Recovered: " + totalRecovered
     displayCovidInfoEl.appendChild(displayTotalRecovered);
 
 
     var testing = data.tests;
     var displayTesting = document.createElement("li");
-    displayTesting.textContent = testing
+    displayTesting.textContent = "Total Tests: " + testing
     displayCovidInfoEl.appendChild(displayTesting);
 
     var todayCases = data.todayCases;
     var displayTodayCases = document.createElement("li");
-    displayTodayCases.textContent = todayCases
+    displayTodayCases.textContent = "Cases Today: " + todayCases
     displayCovidInfoEl.appendChild(displayTodayCases);
 
 
     var todayDeaths = data.todayDeaths;
     var displayDeaths = document.createElement("li");
-    displayDeaths.textContent = todayDeaths
+    displayDeaths.textContent = "Deaths Today: " + todayDeaths
     displayCovidInfoEl.appendChild(displayDeaths);
 
     var todayRecovered = data.todayRecovered;
     var displayTodayRecovered = document.createElement("li");
-    displayTodayRecovered.textContent = todayRecovered
+    displayTodayRecovered.textContent = "Recovered Today: " + todayRecovered
     displayCovidInfoEl.appendChild(displayTodayRecovered);
 
     var totalCases = data.cases;
     var displayTotalCases = document.createElement("li");
-    displayTotalCases.textContent = totalCases
+    displayTotalCases.textContent = "Total Cases: " + totalCases
     displayCovidInfoEl.appendChild(displayTotalCases);
 };
 
@@ -179,24 +179,24 @@ var countryInfo = function (countryName) {
 var displayCountryInfo = function (data) {
     var continent = data[0].continents[0];
     var displayContinent = document.createElement("li");
-    displayContinent.textContent = continent;
+    displayContinent.textContent = "Continent: " + continent;
     displayCovidInfoEl.appendChild(displayContinent);
 
     var capital = data[0].capital[0];
     var displayCapital = document.createElement("li");
-    displayCapital.textContent = capital;
+    displayCapital.textContent = "Capital City: " + capital;
     displayCovidInfoEl.appendChild(displayCapital);
 
     var population = data[0].population;
     var displayPopulation = document.createElement("li");
-    displayPopulation.textContent = population;
+    displayPopulation.textContent = "Population: " + population;
     displayCovidInfoEl.appendChild(displayPopulation);
 
     var languages = data[0].languages;
     var languageObject = Object.values(languages);
     var languageName = languageObject[0];
     var displayLanguageName = document.createElement("li");
-    displayLanguageName.textContent = languageName;
+    displayLanguageName.textContent = "Language: " + languageName;
     displayCovidInfoEl.appendChild(displayLanguageName);
 
 
@@ -208,12 +208,12 @@ var displayCountryInfo = function (data) {
     var currencyObject = Object.values(currency);
     var currencyName = currencyObject[0].name;
     var displayCurrency = document.createElement("li");
-    displayCurrency.textContent = currencyName;
+    displayCurrency.textContent = "Currency: " + currencyName;
     displayCovidInfoEl.appendChild(displayCurrency)
 
     var subregion = data[0].subregion;
     var displaySubregion = document.createElement("li");
-    displaySubregion.textContent = subregion;
+    displaySubregion.textContent = "Subregion: " + subregion;
     displayCovidInfoEl.appendChild(displaySubregion);
 
 }
