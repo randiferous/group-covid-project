@@ -11,9 +11,9 @@ var serverModalEl = document.querySelector("#form-error-server");
 var countryList = document.querySelector("#country-list")
 
 var countryNameTitleEl = document.querySelector("#country-name-title")
-// create variables for placeholder elements
 var displayCovidInfoEl = document.querySelector("#covid-info-display")
 var displayCountryFlag = document.querySelector("#country-flag")
+
 var countryStorage = [];
 
 // form handler
@@ -66,11 +66,10 @@ var saveCountry = function (countryInput) {
 
 var loadCountries = function () {
     var savedCountries = localStorage.getItem("countries");
-    // if there are no countries, set countries to empty array and return out of function
     if (!savedCountries) {
         return false;
     }
-    // parse into array of objects
+
     countryStorage = JSON.parse(savedCountries);
 
     for (var i = 0; i < countryStorage.length; i++) {
@@ -109,11 +108,11 @@ var getCovidInfo = function (countryName) {
     });
 };
 
+// display covid data
 var displayCovidInfo = function (data) {
     var countryName = data.country;
     countryNameTitleEl.textContent = countryName;
 
-    // update textContent of elements with data
     var activeCases = data.active;
     var displayActiveCases = document.createElement("li");
     displayActiveCases.textContent = "Active Cases: " + activeCases;
@@ -123,7 +122,6 @@ var displayCovidInfo = function (data) {
     var displayCriticalCondition = document.createElement("li");
     displayCriticalCondition.textContent = "Number in Critical Condition: " + criticalCondition;
     displayCovidInfoEl.appendChild(displayCriticalCondition);
-
 
     var totalDeath = data.deaths;
     var displayTotalDeath = document.createElement("li");
@@ -135,7 +133,6 @@ var displayCovidInfo = function (data) {
     displayTotalRecovered.textContent = "Total Recovered: " + totalRecovered
     displayCovidInfoEl.appendChild(displayTotalRecovered);
 
-
     var testing = data.tests;
     var displayTesting = document.createElement("li");
     displayTesting.textContent = "Total Tests: " + testing
@@ -145,7 +142,6 @@ var displayCovidInfo = function (data) {
     var displayTodayCases = document.createElement("li");
     displayTodayCases.textContent = "Cases Today: " + todayCases
     displayCovidInfoEl.appendChild(displayTodayCases);
-
 
     var todayDeaths = data.todayDeaths;
     var displayDeaths = document.createElement("li");
@@ -175,7 +171,7 @@ var countryInfo = function (countryName) {
     });
 };
 
-// make data variables to display in function as follows; Continents, Capitals, Populations, Language, timezones, flag, currency, sub-region
+// display general country info
 var displayCountryInfo = function (data) {
     var continent = data[0].continents[0];
     var displayContinent = document.createElement("li");
@@ -199,10 +195,8 @@ var displayCountryInfo = function (data) {
     displayLanguageName.textContent = "Language: " + languageName;
     displayCovidInfoEl.appendChild(displayLanguageName);
 
-
     var flag = data[0].flags.png;
     displayCountryFlag.setAttribute("src", flag);
-
 
     var currency = data[0].currencies;
     var currencyObject = Object.values(currency);
@@ -215,7 +209,6 @@ var displayCountryInfo = function (data) {
     var displaySubregion = document.createElement("li");
     displaySubregion.textContent = "Subregion: " + subregion;
     displayCovidInfoEl.appendChild(displaySubregion);
-
 }
 
 inputFormEl.addEventListener("submit", formSubmitHandler);
