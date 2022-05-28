@@ -8,18 +8,18 @@ var inputFieldEl = document.querySelector("#input-country");
 var formModalEl = document.querySelector("#form-modal");
 var fetchModalEl = document.querySelector("#form-error-fetch");
 var serverModalEl = document.querySelector("#form-error-server");
-
 var countryList = document.querySelector("#country-list")
 
 var countryNameTitleEl = document.querySelector("#country-name-title")
 // create variables for placeholder elements
 var displayCovidInfoEl = document.querySelector("#covid-info-display")
+var displayCountryFlag = document.querySelector("#country-flag")
 var countryStorage = [];
 
 // form handler
 var formSubmitHandler = function (event) {
     event.preventDefault();
-    displayCovidInfoEl.innerHTML = ""
+    displayCovidInfoEl.innerHTML = "";
     var countryInput = inputFieldEl.value.trim();
     console.log(countryInput);
     confirmCountryName(countryInput);
@@ -183,7 +183,7 @@ var displayCountryInfo = function (data) {
     displayCovidInfoEl.appendChild(displayContinent);
 
     var capital = data[0].capital[0];
-    var displayCapital =document.createElement("li");
+    var displayCapital = document.createElement("li");
     displayCapital.textContent = capital;
     displayCovidInfoEl.appendChild(displayCapital);
 
@@ -200,8 +200,9 @@ var displayCountryInfo = function (data) {
     displayCovidInfoEl.appendChild(displayLanguageName);
 
 
-    var flag = data[0].flag;
-    console.log(flag);
+    var flag = data[0].flags.png;
+    displayCountryFlag.setAttribute("src", flag);
+
 
     var currency = data[0].currencies;
     var currencyObject = Object.values(currency);
@@ -214,7 +215,7 @@ var displayCountryInfo = function (data) {
     var displaySubregion = document.createElement("li");
     displaySubregion.textContent = subregion;
     displayCovidInfoEl.appendChild(displaySubregion);
-    
+
 }
 
 inputFormEl.addEventListener("submit", formSubmitHandler);
