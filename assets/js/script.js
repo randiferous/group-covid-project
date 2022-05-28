@@ -177,15 +177,20 @@ var countryInfo = function (countryName) {
 
 // make data variables to display in function as follows; Continents, Capitals, Populations, Language, timezones, flag, currency, sub-region
 var displayCountryInfo = function (data) {
-    console.log(data);
     var continent = data[0].continents[0];
-    console.log(continent);
+    var displayContinent = document.createElement("li");
+    displayContinent.textContent = continent;
+    displayCovidInfoEl.appendChild(displayContinent);;
 
     var capital = data[0].capital[0];
-    console.log(capital);
+    var displayCapital =document.createElement("li");
+    displayCapital.textContent = capital;
+    displayCovidInfo.appendChild(displayCapital)
 
     var population = data[0].population;
-    console.log(population);
+    var displayPopulation = document.createElement("li");
+    displayPopulation.textContent = population;
+    displayCovidInfoEl.appendChild(displayPopulation)
 
     var languages = data[0].languages;
     var languageObject = Object.values(languages);
