@@ -28,6 +28,10 @@
 - made sure country list buttons display info
 - addressed potential major bug where information stacked over each other
 
+5/27 meeting:
+- completed display of information
+- began style of webpage
+
 USER STORY:
 
 As a inquisitive traveller, I want to know general country 
