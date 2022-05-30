@@ -54,7 +54,7 @@ var confirmCountryName = function (countryInput) {
         })
 }
 
-// test local storage
+// local storage
 var saveCountry = function (countryInput) {
     countryStorage.push(countryInput)
     localStorage.setItem("countries", JSON.stringify(countryStorage))
@@ -93,6 +93,7 @@ var searchHistory = function (countryInput) {
 var eventHandler = function (event) {
     displayCovidInfoEl.innerHTML = ""
     getCovidInfo(event.target.textContent);
+    countryInfo(event.target.textContent);
 }
 
 // test api server fetch
