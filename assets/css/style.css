@@ -7,7 +7,7 @@
     /* color: #f5f5f5; */
 }
 
-body {
+html {
     background: #000;
     background-image: url("../country-background.jpg");
     background-size: cover;
