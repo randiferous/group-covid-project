@@ -27,24 +27,31 @@ aside {
     border-radius: 15px;
 }
 
+#country-name-title {
+    color: #010f0b;
+}
+
 #country-info {
     margin-top: 3vw;
     margin-left: 3vw;
     /* border: 3px solid white; */
-    /* background-color: rgb(58, 163, 238,0.70); */
-    /* background-color: rgb(70, 58, 238, 0.87); */
-    background-color: rgb(139, 186, 218, 0.77);
+    /* background-color: rgb(139, 186, 218, 0.77); */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border-radius: 15px;
     color: white;
 }
 
-.active-cases, .critical-condition-style, .total-death-style, .total-recovered-style, .total-testing, .total-today-case, .today-deaths, .today-recovered, .total-cases {
+.active-cases, .currency, .capital-city, .language-name, .critical-condition-style, .total-death-style, .total-recovered-style, .total-testing, .total-today-case, .today-deaths, .today-recovered, .total-cases {
     /* background: #4d616a; */
     background: #c8dde4;
     color: #010f0b;
-    margin: .5vw;
+    margin: 2vw;
     border-radius: 15px;
     border: solid 2px white;
     padding: 1vw;
+}
+
+#country-flag {
+    margin-top: 1vw;
+    margin-bottom: 1vw;
 }

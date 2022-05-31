@@ -16,6 +16,7 @@ var countryNameTitleEl = document.querySelector("#country-name-title")
 var displayCovidInfoEl = document.querySelector("#covid-info-display")
 var displayCountryFlag = document.querySelector("#country-flag")
 var countryInfoDisplay = document.querySelector("#country-info-display")
+var countryInfoDisplay2 = document.querySelector("#country-info-display2")
 var clearHistoryButton = document.querySelector("#clear-history")
 
 var countryStorage = [];
@@ -136,11 +137,13 @@ var displayCovidInfo = function (data) {
     var activeCases = data.active;
     var displayActiveCases = document.createElement("li");
     displayActiveCases.textContent = "Active Cases: " + activeCases;
+    displayActiveCases.className = ("active-cases column is-4");
     displayCovidInfoEl.appendChild(displayActiveCases);
 
     var criticalCondition = data.critical;
     var displayCriticalCondition = document.createElement("li");
     displayCriticalCondition.textContent = "Number in Critical Condition: " + criticalCondition;
+    displayCriticalCondition.className = ("critical-condition-style column is-4");
     displayCovidInfoEl.appendChild(displayCriticalCondition);
 
     var totalDeath = data.deaths;
@@ -193,26 +196,30 @@ var countryInfo = function (countryName) {
 
 // display general country info
 var displayCountryInfo = function (data) {
-    var continent = data[0].continents[0];
-    var displayContinent = document.createElement("li");
-    displayContinent.textContent = "Continent: " + continent;
-    countryInfoDisplay.appendChild(displayContinent);
+    // var continent = data[0].continents[0];
+    // var displayContinent = document.createElement("li");
+    // displayContinent.textContent = "Continent: " + continent;
+    // displayContinent.className = ("critical-condition-style");
+    // countryInfoDisplay.appendChild(displayContinent);
 
     var capital = data[0].capital[0];
     var displayCapital = document.createElement("li");
     displayCapital.textContent = "Capital City: " + capital;
+    displayCapital.className = ("capital-city");
     countryInfoDisplay.appendChild(displayCapital);
 
     var population = data[0].population;
     var displayPopulation = document.createElement("li");
     displayPopulation.textContent = "Population: " + population;
-    countryInfoDisplay.appendChild(displayPopulation);
+    displayPopulation.className = ("critical-condition-style");
+    countryInfoDisplay2.appendChild(displayPopulation);
 
     var languages = data[0].languages;
     var languageObject = Object.values(languages);
     var languageName = languageObject[0];
     var displayLanguageName = document.createElement("li");
     displayLanguageName.textContent = "Language: " + languageName;
+    displayLanguageName.className = ("language-name");
     countryInfoDisplay.appendChild(displayLanguageName);
 
     var flag = data[0].flags.png;
@@ -223,12 +230,13 @@ var displayCountryInfo = function (data) {
     var currencyName = currencyObject[0].name;
     var displayCurrency = document.createElement("li");
     displayCurrency.textContent = "Currency: " + currencyName;
-    countryInfoDisplay.appendChild(displayCurrency)
+    displayCurrency.className = ("currency");
+    countryInfoDisplay2.appendChild(displayCurrency)
 
-    var subregion = data[0].subregion;
-    var displaySubregion = document.createElement("li");
-    displaySubregion.textContent = "Subregion: " + subregion;
-    countryInfoDisplay.appendChild(displaySubregion);
+    // var subregion = data[0].subregion;
+    // var displaySubregion = document.createElement("li");
+    // displaySubregion.textContent = "Subregion: " + subregion;
+    // countryInfoDisplay.appendChild(displaySubregion);
 }
 
 // Clear history
