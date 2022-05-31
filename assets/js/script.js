@@ -15,6 +15,8 @@ var countryList = document.querySelector("#country-list")
 var countryNameTitleEl = document.querySelector("#country-name-title")
 var displayCovidInfoEl = document.querySelector("#covid-info-display")
 var displayCountryFlag = document.querySelector("#country-flag")
+var countryInfoDisplay = document.querySelector("#country-info-display")
+var clearHistoryButton = document.querySelector("#clear-history")
 
 var countryStorage = [];
 
@@ -22,9 +24,11 @@ var countryStorage = [];
 var formSubmitHandler = function (event) {
     event.preventDefault();
     displayCovidInfoEl.innerHTML = "";
+    countryInfoDisplay.innerHTML= "";
     var countryInput = inputFieldEl.value.trim();
     console.log(countryInput);
     
+
     if (countryInput) {
         inputFieldEl.value = "";
         confirmCountryName(countryInput);
@@ -105,7 +109,8 @@ var searchHistory = function (countryInput) {
 }
 
 var eventHandler = function (event) {
-    displayCovidInfoEl.innerHTML = ""
+    displayCovidInfoEl.innerHTML = "";
+    countryInfoDisplay.innerHTML = "";
     getCovidInfo(event.target.textContent);
     countryInfo(event.target.textContent);
 }
@@ -191,24 +196,24 @@ var displayCountryInfo = function (data) {
     var continent = data[0].continents[0];
     var displayContinent = document.createElement("li");
     displayContinent.textContent = "Continent: " + continent;
-    displayCovidInfoEl.appendChild(displayContinent);
+    countryInfoDisplay.appendChild(displayContinent);
 
     var capital = data[0].capital[0];
     var displayCapital = document.createElement("li");
     displayCapital.textContent = "Capital City: " + capital;
-    displayCovidInfoEl.appendChild(displayCapital);
+    countryInfoDisplay.appendChild(displayCapital);
 
     var population = data[0].population;
     var displayPopulation = document.createElement("li");
     displayPopulation.textContent = "Population: " + population;
-    displayCovidInfoEl.appendChild(displayPopulation);
+    countryInfoDisplay.appendChild(displayPopulation);
 
     var languages = data[0].languages;
     var languageObject = Object.values(languages);
     var languageName = languageObject[0];
     var displayLanguageName = document.createElement("li");
     displayLanguageName.textContent = "Language: " + languageName;
-    displayCovidInfoEl.appendChild(displayLanguageName);
+    countryInfoDisplay.appendChild(displayLanguageName);
 
     var flag = data[0].flags.png;
     displayCountryFlag.setAttribute("src", flag);
@@ -218,14 +223,25 @@ var displayCountryInfo = function (data) {
     var currencyName = currencyObject[0].name;
     var displayCurrency = document.createElement("li");
     displayCurrency.textContent = "Currency: " + currencyName;
-    displayCovidInfoEl.appendChild(displayCurrency)
+    countryInfoDisplay.appendChild(displayCurrency)
 
     var subregion = data[0].subregion;
     var displaySubregion = document.createElement("li");
     displaySubregion.textContent = "Subregion: " + subregion;
-    displayCovidInfoEl.appendChild(displaySubregion);
+    countryInfoDisplay.appendChild(displaySubregion);
 }
 
+// Clear history
+var clearHistory = function (event){
+    event.preventDefault();
+    countryStorage =[];
+    localStorage.removeItem("countries");
+    document.location.reload()
+}
+
+
 inputFormEl.addEventListener("submit", formSubmitHandler);
+
+clearHistoryButton.addEventListener("click", clearHistory)
 
 loadCountries();

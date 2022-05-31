@@ -37,6 +37,9 @@
                         <p class="menu-label is-size-3 has-text-light is-family-code mt-5 mb-0 has-text-centered">
                             Countries
                         </p>
+                        <div class="control is-flex is-justify-content-center">
+                            <button class="button is-link is-light has" id="clear-history" >Clear History</button>
+                        </div>
                         <ul class="menu-list has-text-light has-text-centered" id="country-list">
                         </ul>
                     </aside>
@@ -44,11 +47,15 @@
                 <div id="country-info" class="column is-8">
                     <!-- country information section -->
                     <h1 id="country-name-title" class="is-size-2 has-text-centered is-underlined"></h1>
+                    <img id= "country-flag">
+                    <div>
+                        <ul id="country-info-display"></ul>
+                    </div>
                     <div>
                         <ul id= "covid-info-display">
                         </ul>
                     </div>
-                    <img id= "country-flag">
+                   
                 </div>
             </div>
         
