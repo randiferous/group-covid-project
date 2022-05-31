@@ -41,7 +41,7 @@ aside {
     color: white;
 }
 
-.active-cases, .currency, .capital-city, .language-name, .critical-condition-style, .total-death-style, .total-recovered-style, .total-testing, .total-today-case, .today-deaths, .today-recovered, .total-cases {
+.country-list, .covid-list {
     /* background: #4d616a; */
     background: #c8dde4;
     color: #010f0b;
