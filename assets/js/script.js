@@ -2,6 +2,7 @@ console.log("Hello world!")
 console.log("Hello birds!")
 console.log("Goodnight yall!")
 
+// element variables
 var inputFormEl = document.querySelector("#input-form");
 var inputFieldEl = document.querySelector("#input-country");
 
@@ -44,6 +45,7 @@ var formSubmitHandler = function (event) {
     }
 };
 
+// confirm country name and avoid duplicates
 var confirmCountryName = function (countryInput) {
     var apiUrl = "https://disease.sh/v3/covid-19/countries/" + countryInput;
     fetch(apiUrl).then(function (response) {
@@ -76,7 +78,7 @@ var checkDuplicate = function (countryInput) {
     }
 }
 
-// local storage
+// local storage functions
 var saveCountry = function (countryInput) {
     countryStorage.push(countryInput)
     localStorage.setItem("countries", JSON.stringify(countryStorage))
@@ -142,31 +144,31 @@ var displayCovidInfo = function (data) {
     var activeCases = data.active;
     var displayActiveCases = document.createElement("li");
     displayActiveCases.textContent = "Active Cases: " + activeCases;
-    displayActiveCases.className = ("covid-list active-cases column");
+    displayActiveCases.className = ("covid-list active-cases");
     displayCovidInfoEl.appendChild(displayActiveCases);
 
     var todayCases = data.todayCases;
     var displayTodayCases = document.createElement("li");
     displayTodayCases.textContent = "Cases Today: " + todayCases
-    displayTodayCases.className = ("covid-list today-cases column");
+    displayTodayCases.className = ("covid-list today-cases");
     displayCovidInfoEl.appendChild(displayTodayCases);
 
     var todayDeaths = data.todayDeaths;
     var displayDeaths = document.createElement("li");
     displayDeaths.textContent = "Deaths Today: " + todayDeaths
-    displayDeaths.className = ("covid-list deaths column");
+    displayDeaths.className = ("covid-list deaths");
     displayCovidInfoEl.appendChild(displayDeaths);
 
     var todayRecovered = data.todayRecovered;
     var displayTodayRecovered = document.createElement("li");
     displayTodayRecovered.textContent = "Recovered Today: " + todayRecovered
-    displayTodayRecovered.className = ("covid-list today-recovered column");
+    displayTodayRecovered.className = ("covid-list today-recovered");
     displayCovidInfoEl.appendChild(displayTodayRecovered);
 
     var criticalCondition = data.critical;
     var displayCriticalCondition = document.createElement("li");
-    displayCriticalCondition.textContent = "Number in Critical Condition: " + criticalCondition;
-    displayCriticalCondition.className = ("covid-list critical-condition-style column");
+    displayCriticalCondition.textContent = "Critical Condition: " + criticalCondition;
+    displayCriticalCondition.className = ("covid-list critical-condition-style");
     displayCovidInfoEl2.appendChild(displayCriticalCondition);
 
     var totalCases = data.cases;
@@ -178,13 +180,13 @@ var displayCovidInfo = function (data) {
     var totalDeath = data.deaths;
     var displayTotalDeath = document.createElement("li");
     displayTotalDeath.textContent = "Total Deaths: " + totalDeath;
-    displayTotalDeath.className = ("covid-list total-death column");
+    displayTotalDeath.className = ("covid-list total-death");
     displayCovidInfoEl2.appendChild(displayTotalDeath);
 
     var totalRecovered = data.recovered;
     var displayTotalRecovered = document.createElement("li");
     displayTotalRecovered.textContent = "Total Recovered: " + totalRecovered
-    displayTotalRecovered.className = ("covid-list total-recovered column");
+    displayTotalRecovered.className = ("covid-list total-recovered");
     displayCovidInfoEl2.appendChild(displayTotalRecovered);
 
 
@@ -261,7 +263,7 @@ var clearHistory = function (event){
     document.location.reload()
 }
 
-
+// Event Listeners
 inputFormEl.addEventListener("submit", formSubmitHandler);
 
 clearHistoryButton.addEventListener("click", clearHistory)

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Group Project</title>
+    <title>Country Covid Tracker</title>
 </head>
 
 <body>
@@ -23,7 +23,7 @@
                         <div class="field">
                             <label class="label has-text-centered is-size-3 m-1">Country Name</label>
                             <div class="control">
-                                <input id="input-country" class="input" type="text" placeholder="Enter country name">
+                                <input id="input-country" class="input is-rounded" type="text" placeholder="Enter country name">
                             </div>
                         </div>
                         <div class="field">
@@ -47,21 +47,23 @@
                 <div id="country-info" class="column is-8">
                     <!-- country information section -->
                     <h1 id="country-name-title" class="is-size-2 has-text-centered is-underlined"></h1>
-                    <div class="columns is-centered"><img class="column is-4" id="country-flag"></div>
-                    <div class="columns is-flex is-centered">
-                        <div>
-                            <ul id="country-info-display" class="is-size-6"></ul>
+                    <div class="columns is-mobile is-centered"><img class="column is-4" id="country-flag"></div>
+                    <div class="columns is-flex is-centered mb-0">
+                        <!-- general country information -->
+                        <div class="column is-half py-0">
+                            <ul id="country-info-display" class="is-size-4 has-text-weight-bold"></ul>
                         </div>
-                        <div>
-                            <ul id="country-info-display2" class="is-size-6"></ul>
+                        <div class="column is-half py-0">
+                            <ul id="country-info-display2" class="is-size-4 has-text-weight-bold"></ul>
                         </div>
                     </div>
+                    <!-- country covid data -->
                     <div class="columns is-flex is-centered">
-                        <div>
-                            <ul id="covid-info-display" class="is-size-6"></ul>
+                        <div class="column is-half py-0">
+                            <ul id="covid-info-display" class="is-size-4"></ul>
                         </div>
-                        <div>
-                            <ul id="covid-info-display2" class="is-size-6"></ul>
+                        <div class="column is-half py-0">
+                            <ul id="covid-info-display2" class="is-size-4"></ul>
                         </div>
                     </div>
 

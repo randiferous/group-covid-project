@@ -32,6 +32,11 @@
 - completed display of information
 - began style of webpage
 
+5/30 meeting:
+- added clear button
+- addressed duplicate country name bug
+- made significant progress on styling
+
 USER STORY:
 
 As a inquisitive traveller, I want to know general country 
