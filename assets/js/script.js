@@ -14,6 +14,7 @@ var countryNameTitleEl = document.querySelector("#country-name-title")
 var displayCovidInfoEl = document.querySelector("#covid-info-display")
 var displayCountryFlag = document.querySelector("#country-flag")
 var countryInfoDisplay = document.querySelector("#country-info-display")
+var countryInfoDisplay2 = document.querySelector("#country-info-display2")
 var clearHistoryButton = document.querySelector("#clear-history")
 
 var countryStorage = [];
@@ -183,6 +184,7 @@ var displayCountryInfo = function (data) {
     var continent = data[0].continents[0];
     var displayContinent = document.createElement("li");
     displayContinent.textContent = "Continent: " + continent;
+    displayContinent.className = ("critical-condition-style");
     countryInfoDisplay.appendChild(displayContinent);
 
     var capital = data[0].capital[0];
@@ -193,7 +195,8 @@ var displayCountryInfo = function (data) {
     var population = data[0].population;
     var displayPopulation = document.createElement("li");
     displayPopulation.textContent = "Population: " + population;
-    countryInfoDisplay.appendChild(displayPopulation);
+    displayPopulation.className = ("critical-condition-style");
+    countryInfoDisplay2.appendChild(displayPopulation);
 
     var languages = data[0].languages;
     var languageObject = Object.values(languages);
