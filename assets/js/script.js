@@ -8,6 +8,8 @@ var inputFieldEl = document.querySelector("#input-country");
 var formModalEl = document.querySelector("#form-modal");
 var fetchModalEl = document.querySelector("#form-error-fetch");
 var serverModalEl = document.querySelector("#form-error-server");
+var repeatModalEl = document.querySelector("#repeat-modal");
+
 var countryList = document.querySelector("#country-list")
 
 var countryNameTitleEl = document.querySelector("#country-name-title")
@@ -22,10 +24,10 @@ var formSubmitHandler = function (event) {
     displayCovidInfoEl.innerHTML = "";
     var countryInput = inputFieldEl.value.trim();
     console.log(countryInput);
-    confirmCountryName(countryInput);
-
+    
     if (countryInput) {
         inputFieldEl.value = "";
+        confirmCountryName(countryInput);
     } else {
         formModalEl.style.display = "flex";
         window.onclick = function (event) {
@@ -38,7 +40,7 @@ var confirmCountryName = function (countryInput) {
     var apiUrl = "https://disease.sh/v3/covid-19/countries/" + countryInput;
     fetch(apiUrl).then(function (response) {
         if (response.ok) {
-            saveCountry(countryInput);
+            checkDuplicate(countryInput);
         } else {
             fetchModalEl.style.display = "flex";
             window.onclick = function (event) {
@@ -54,12 +56,24 @@ var confirmCountryName = function (countryInput) {
         })
 }
 
+var checkDuplicate = function (countryInput) {
+    if (countryStorage.includes(countryInput)) {
+        repeatModalEl.style.display = "flex";
+
+        window.onclick = function (event) {
+            repeatModalEl.style.display = "none";
+        }
+    } else {
+        saveCountry(countryInput);
+    }
+}
+
 // local storage
 var saveCountry = function (countryInput) {
     countryStorage.push(countryInput)
     localStorage.setItem("countries", JSON.stringify(countryStorage))
-    searchHistory(countryInput);
 
+    searchHistory(countryInput);
     getCovidInfo(countryInput);
     countryInfo(countryInput);
 };
