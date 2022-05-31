@@ -28,7 +28,8 @@ aside {
 }
 /* country information styling */
 #country-name-title {
-    color: #010f0b;
+    background-color: rgb(190, 223, 234, .4);
+    color: #363636;
 }
 
 #country-info {
@@ -42,9 +43,28 @@ aside {
 }
 
 /* specific country data styling */
-.country-list, .covid-list {
+.country-list {
     /* background: #4d616a; */
     background: #c8dde4;
+    color: #010f0b;
+    margin: 1vw;
+    border-radius: 15px;
+    border: solid 2px white;
+    padding: 1vw;
+}
+
+.active-cases, .critical-condition-style {
+    background: #459bd9;
+    color: #010f0b;
+    margin: 1vw;
+    border-radius: 15px;
+    border: solid 2px white;
+    padding: 1vw;
+}
+
+.covid-list {
+    /* background: #4d616a; */
+    background: #bbaf93;
     color: #010f0b;
     margin: 1vw;
     border-radius: 15px;

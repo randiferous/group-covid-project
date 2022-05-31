@@ -144,7 +144,7 @@ var displayCovidInfo = function (data) {
     var activeCases = data.active;
     var displayActiveCases = document.createElement("li");
     displayActiveCases.textContent = "Active Cases: " + activeCases;
-    displayActiveCases.className = ("covid-list active-cases");
+    displayActiveCases.className = ("active-cases");
     displayCovidInfoEl.appendChild(displayActiveCases);
 
     var todayCases = data.todayCases;
@@ -159,16 +159,16 @@ var displayCovidInfo = function (data) {
     displayDeaths.className = ("covid-list deaths");
     displayCovidInfoEl.appendChild(displayDeaths);
 
-    var todayRecovered = data.todayRecovered;
-    var displayTodayRecovered = document.createElement("li");
-    displayTodayRecovered.textContent = "Recovered Today: " + todayRecovered
-    displayTodayRecovered.className = ("covid-list today-recovered");
-    displayCovidInfoEl.appendChild(displayTodayRecovered);
+    // var todayRecovered = data.todayRecovered;
+    // var displayTodayRecovered = document.createElement("li");
+    // displayTodayRecovered.textContent = "Recovered Today: " + todayRecovered
+    // displayTodayRecovered.className = ("covid-list today-recovered");
+    // displayCovidInfoEl.appendChild(displayTodayRecovered);
 
     var criticalCondition = data.critical;
     var displayCriticalCondition = document.createElement("li");
     displayCriticalCondition.textContent = "Critical Condition: " + criticalCondition;
-    displayCriticalCondition.className = ("covid-list critical-condition-style");
+    displayCriticalCondition.className = ("critical-condition-style");
     displayCovidInfoEl2.appendChild(displayCriticalCondition);
 
     var totalCases = data.cases;
@@ -183,11 +183,11 @@ var displayCovidInfo = function (data) {
     displayTotalDeath.className = ("covid-list total-death");
     displayCovidInfoEl2.appendChild(displayTotalDeath);
 
-    var totalRecovered = data.recovered;
-    var displayTotalRecovered = document.createElement("li");
-    displayTotalRecovered.textContent = "Total Recovered: " + totalRecovered
-    displayTotalRecovered.className = ("covid-list total-recovered");
-    displayCovidInfoEl2.appendChild(displayTotalRecovered);
+    // var totalRecovered = data.recovered;
+    // var displayTotalRecovered = document.createElement("li");
+    // displayTotalRecovered.textContent = "Total Recovered: " + totalRecovered
+    // displayTotalRecovered.className = ("covid-list total-recovered");
+    // displayCovidInfoEl2.appendChild(displayTotalRecovered);
 
 
 
@@ -227,7 +227,7 @@ var displayCountryInfo = function (data) {
     var population = data[0].population;
     var displayPopulation = document.createElement("li");
     displayPopulation.textContent = "Population: " + population;
-    displayPopulation.className = ("country-list critical-condition-style");
+    displayPopulation.className = ("country-list");
     countryInfoDisplay2.appendChild(displayPopulation);
 
     var languages = data[0].languages;
