@@ -121,11 +121,13 @@ var displayCovidInfo = function (data) {
     var activeCases = data.active;
     var displayActiveCases = document.createElement("li");
     displayActiveCases.textContent = "Active Cases: " + activeCases;
+    displayActiveCases.className = ("active-cases column is-4");
     displayCovidInfoEl.appendChild(displayActiveCases);
 
     var criticalCondition = data.critical;
     var displayCriticalCondition = document.createElement("li");
     displayCriticalCondition.textContent = "Number in Critical Condition: " + criticalCondition;
+    displayCriticalCondition.className = ("critical-condition-style column is-4");
     displayCovidInfoEl.appendChild(displayCriticalCondition);
 
     var totalDeath = data.deaths;
