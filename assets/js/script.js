@@ -30,6 +30,9 @@ var formSubmitHandler = function (event) {
     countryInfoDisplay.innerHTML= "";
     displayCovidInfoEl2.innerHTML= "";
     countryInfoDisplay2.innerHTML= "";
+    countryNameTitleEl.innerHTML = "";
+    displayCountryFlag.setAttribute("src", "");
+
     var countryInput = inputFieldEl.value.trim();
     console.log(countryInput);
     
@@ -119,6 +122,7 @@ var eventHandler = function (event) {
     countryInfoDisplay.innerHTML = "";
     displayCovidInfoEl2.innerHTML = "";
     countryInfoDisplay2.innerHTML = "";
+
     getCovidInfo(event.target.textContent);
     countryInfo(event.target.textContent);
 }
