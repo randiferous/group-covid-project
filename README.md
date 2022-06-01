@@ -1,10 +1,20 @@
 # Group Project: COVID-19 Tracker
 
-COVID-19 Tracker by Country
+USER STORY:
+
+AS a inquisitive traveller, 
+I WANT to know general country information and pertinent COVID-19 data from that country,
+SO THAT I can stay informed on the pandemic status of a country I may visit.
+
+## Contributors
+
+[Samantha Haberman](https://github.com/Samantha-Ruth)
+[Daniel Lee](https://github.com/randiferous)
+[Daryl Parrett](https://github.com/HenryTheRed85)
 
 ## Description
 
-This project's goal was to work as a team to pull information from two separate APIs and displayed specific elements from these databases on a webpage.  The collaborators on this project were [Samantha Haberman](https://github.com/Samantha-Ruth), [Daniel Lee](https://github.com/randiferous), and [Daryl Parrett]. 
+This project's goal was to work as a team to pull information from two separate APIs and displayed specific elements from these databases on a webpage.
 
 When the user enters a country, the application should show the country's flag, capital city, population, the language, and currency of that country as well as the COVID-19 data, including active cases, the number of people in crital condition, total cases and deaths, and cases and deaths that have occurred this day.  The application was built using two API fetches while integrating javaScript event listeners, functions, and HTML styling with Bulma.  Local storage was used to list previously searched countries on the sidebar. 
 
@@ -41,7 +51,7 @@ The url of the Git repository is here: https://github.com/randiferous/group-covi
 5/24 meeting:
 - completed country info API pull
 - error handle using modals
-- finalized user story (grilled by instructor)
+- finalized user story
 - HTML search history
 - test connection between form and country display
 
@@ -59,12 +69,7 @@ The url of the Git repository is here: https://github.com/randiferous/group-covi
 - addressed duplicate country name bug
 - made significant progress on styling
 
-USER STORY:
 
-As a inquisitive traveller, I want to know general country 
-information and pertinent COVID-19 data from that country 
-so I can stay informed on the pandemic status of a country 
-I may visit. 
 
 As a user, when I enter a country into the form, I am presented 
 with pertinent country information (population, flag, language, 
