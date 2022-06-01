@@ -1,9 +1,8 @@
 # Group Project: COVID-19 Tracker
 
-USER STORY:
-
-AS a inquisitive traveller, 
-I WANT to know general country information and pertinent COVID-19 data from that country,
+USER STORY:  
+AS a inquisitive traveller,  
+I WANT to know general country information and pertinent COVID-19 data from that country,  
 SO THAT I can stay informed on the pandemic status of a country I may visit.
 
 ## Contributors
@@ -16,7 +15,7 @@ SO THAT I can stay informed on the pandemic status of a country I may visit.
 
 This project's goal was to work as a team to pull information from two separate APIs and displayed specific elements from these databases on a webpage.
 
-When the user enters a country, the application should show the country's flag, capital city, population, the language, and currency of that country as well as the COVID-19 data, including active cases, the number of people in crital condition, total cases and deaths, and cases and deaths that have occurred this day.  The application was built using the [Open Disease Data API](https://corona.lmao.ninja/) and the [RESTful API](https://restcountries.com/) while integrating javaScript event listeners, functions, and HTML styling with Bulma.  Local storage was used to list previously searched countries on the sidebar. 
+When the user enters a country, the application should show the country's flag, capital city, population, the language, and currency of that country as well as the COVID-19 data, including active cases, the number of people in crital condition, total cases and deaths, and cases and deaths that have occurred this day.  The application was built using the [Open Disease Data API](https://corona.lmao.ninja/) and the [RESTful API](https://restcountries.com/) while integrating javaScript event listeners, functions, and HTML styling with [Bulma](https://bulma.io/).  Local storage was used to list previously searched countries on the sidebar. 
 
 
 
@@ -31,7 +30,7 @@ The link to the deployed project is here: https://randiferous.github.io/group-co
 
 The url of the Git repository is here: https://github.com/randiferous/group-covid-project
 
-
+(Should we just delete the rest of this?)
 (Just to keep track of our progress)
 
 5/21 meeting:
