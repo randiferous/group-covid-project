@@ -9,6 +9,7 @@ This project's goal was to work as a team to pull information from two separate 
 When the user enters a country, the application should show the country's flag, capital city, population, the language, and currency of that country as well as the COVID-19 data, including active cases, the number of people in crital condition, total cases and deaths, and cases and deaths that have occurred this day.  The application was built using two API fetches while integrating javaScript event listeners, functions, and HTML styling with Bulma.  Local storage was used to list previously searched countries on the sidebar. 
 
 
+
 ![App with Country displayed](https://user-images.githubusercontent.com/64170123/171307462-5df3cd3d-3039-49b6-8940-c78743756b16.jpg)
 
 
@@ -19,15 +20,6 @@ This project helped us work together as a group, manage our time effectively, an
 The link to the deployed project is here: https://randiferous.github.io/group-covid-project/
 
 The url of the Git repository is here: https://github.com/randiferous/group-covid-project
-
-
-
-
-
-
-
-
-
 
 
 (Just to keep track of our progress)
