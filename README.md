@@ -4,7 +4,7 @@ Covid Tracker by Country
 
 ## Description
 
-This project's goal was to work as a team to pull information from two separate APIs and displayed specific elements from these databases on a webpage.  The collaborators on this project were [Samantha Haberman](https://github.com/Samantha-Ruth), [Daniel Lee] , and [Daryl Parrett]. 
+This project's goal was to work as a team to pull information from two separate APIs and displayed specific elements from these databases on a webpage.  The collaborators on this project were [Samantha Haberman](https://github.com/Samantha-Ruth), [Daniel Lee](https://github.com/randiferous), and [Daryl Parrett]. 
 
 When the user enters a country, the application should show the country's flag, capital city, population, the language, and currency of that country as well as the COVID-19 data, including active cases, the number of people in crital condition, total cases and deaths, and cases and deaths that have occurred this day.  The application was built using two API fetches while integrating javaScript and HTML styling with Bulma.  Previously searched countries should show up on the sidebar and stay there when the screen is refreshed, incorporating local storage. 
 
