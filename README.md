@@ -9,7 +9,7 @@ This project's goal was to work as a team to pull information from two separate 
 When the user enters a country, the application should show the country's flag, capital city, population, the language, and currency of that country as well as the COVID-19 data, including active cases, the number of people in crital condition, total cases and deaths, and cases and deaths that have occurred this day.  The application was built using two API fetches while integrating javaScript and HTML styling with Bulma.  Previously searched countries should show up on the sidebar and stay there when the screen is refreshed, incorporating local storage. 
 
 
-![Weather Dashboard Screen Shot](https://user-images.githubusercontent.com/64170123/170913520-5d593f23-bf05-4e8b-b427-a248cea9630c.jpg)
+
 
 
 This project helped us work together as a group, manage our time, and work out problems together.  We also learned a new .css framework by reviewing documentation and implemented it in our application.   We solidified our understand of API fetches and promises, as well as dynamic styling and events in javaScript.  Future developments may include making the returned number elements more legible (adding commas), introducing maps, making data more interactive, and including cities. 
