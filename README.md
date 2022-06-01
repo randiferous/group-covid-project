@@ -8,15 +8,15 @@ SO THAT I can stay informed on the pandemic status of a country I may visit.
 
 ## Contributors
 
-[Samantha Haberman](https://github.com/Samantha-Ruth)
-[Daniel Lee](https://github.com/randiferous)
+[Samantha Haberman](https://github.com/Samantha-Ruth)  
+[Daniel Lee](https://github.com/randiferous)  
 [Daryl Parrett](https://github.com/HenryTheRed85)
 
 ## Description
 
 This project's goal was to work as a team to pull information from two separate APIs and displayed specific elements from these databases on a webpage.
 
-When the user enters a country, the application should show the country's flag, capital city, population, the language, and currency of that country as well as the COVID-19 data, including active cases, the number of people in crital condition, total cases and deaths, and cases and deaths that have occurred this day.  The application was built using two API fetches while integrating javaScript event listeners, functions, and HTML styling with Bulma.  Local storage was used to list previously searched countries on the sidebar. 
+When the user enters a country, the application should show the country's flag, capital city, population, the language, and currency of that country as well as the COVID-19 data, including active cases, the number of people in crital condition, total cases and deaths, and cases and deaths that have occurred this day.  The application was built using the [Open Disease Data API](https://corona.lmao.ninja/) and the [RESTful API](https://restcountries.com/) while integrating javaScript event listeners, functions, and HTML styling with Bulma.  Local storage was used to list previously searched countries on the sidebar. 
 
 
 
