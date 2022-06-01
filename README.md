@@ -1,6 +1,6 @@
-# country-info-project
+# Group Project: COVID-19 Tracker
 
-Covid Tracker by Country
+COVID-19 Tracker by Country
 
 ## Description
 
