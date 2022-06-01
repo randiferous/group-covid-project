@@ -17,7 +17,7 @@ This project helped us work together as a group, manage our time, and work out p
 
 The link to the deployed project is here: 
 
-The url of the Git repository is here: 
+The url of the Git repository is here: https://github.com/randiferous/group-covid-project
 
 
 
