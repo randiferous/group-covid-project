@@ -25,7 +25,7 @@ When the user enters a country, the application should show the country's flag, 
 
 This project helped us work together as a group, manage our time effectively, and solve problems together.  We also learned a new .css framework by reviewing documentation and implemented it in our application.   We solidified our understand of API fetches and promises, as well as dynamic styling and events in javaScript.  Future developments may include making the returned number elements more legible (adding commas), introducing maps, making data more interactive, and including cities. 
 
-##Links
+## Links
 The link to the deployed project is here: https://randiferous.github.io/group-covid-project/
 
 The url of the Git repository is here: https://github.com/randiferous/group-covid-project
