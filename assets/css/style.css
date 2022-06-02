@@ -26,6 +26,13 @@ aside {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border-radius: 15px;
 }
+
+.menu-list a {
+    color: white;
+}
+.menu-list a:hover {
+    color: rgba(2, 7, 10, 0.7);
+}
 /* country information styling */
 #country-name-title {
     background-color: rgb(190, 223, 234, .4);

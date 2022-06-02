@@ -109,7 +109,6 @@ var loadCountries = function () {
 var searchHistory = function (countryInput) {
     var countryListElement = document.createElement("li")
     var countryAnchor = document.createElement("a")
-    countryAnchor.className = "has-text-light"
     countryAnchor.textContent = countryInput;
     countryListElement.appendChild(countryAnchor);
     countryList.appendChild(countryListElement);
