@@ -1,7 +1,7 @@
 # Group Project: COVID-19 Tracker
 
 USER STORY:  
-AS a inquisitive traveller,  
+AS an inquisitive traveller,  
 I WANT to know general country information and pertinent COVID-19 data from that country,  
 SO THAT I can stay informed on the pandemic status of a country I may visit.
 
