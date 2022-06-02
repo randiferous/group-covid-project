@@ -30,17 +30,3 @@ The link to the deployed project is here: https://randiferous.github.io/group-co
 
 The url of the Git repository is here: https://github.com/randiferous/group-covid-project
 
-(Should we just delete the rest of this?)
-(Just to keep track of our progress)
-
-
-
-
-As a user, when I enter a country into the form, I am presented 
-with pertinent country information (population, flag, language, 
-currency). 
-
-As a user, when I enter a country into the form, I am presented 
-with past and current COVID-19 data. 
-
-I want the list of countries I have previously searched to display on the page. 
